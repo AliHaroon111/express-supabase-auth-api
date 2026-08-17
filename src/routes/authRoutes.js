@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { supabase } from '../config/supabaseClient.js';
+import { requireAuth } from '../middleware/authMiddleware.js';
 
 const router = Router();
 
@@ -39,6 +40,17 @@ router.post('/login', async (req, res) => {
     refresh_token: data.session.refresh_token,
     user: data.user,
   });
+});
+
+// POST /auth/logout - protected route, ends the user's session.
+router.post('/logout', requireAuth, async (req, res) => {
+  const { error } = await supabase.auth.signOut();
+
+  if (error) {
+    return res.status(400).json({ error: error.message });
+  }
+
+  return res.status(204).send();
 });
 
 export default router;
