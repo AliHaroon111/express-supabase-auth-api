@@ -1,0 +1,23 @@
+{
+  "name": "flyrank-auth",
+  "version": "1.0.0",
+  "description": "FlyRank Internship - Backend Track - W2 - A4 - Auth: Login & protect (Supabase Auth API)",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": [
+    "auth",
+    "supabase",
+    "express",
+    "jwt"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
