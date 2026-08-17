@@ -1,3 +1,7 @@
+import swaggerUi from 'swagger-ui-express';
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import path from 'path';
 import 'dotenv/config';
 import express from 'express';
 import { supabase } from './config/supabaseClient.js';
@@ -7,6 +11,12 @@ import protectedRoutes from './routes/protectedRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const openapiDocument = JSON.parse(readFileSync(path.join(__dirname, 'openapi.json'), 'utf-8'));
+
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(openapiDocument));
+
 
 app.use(express.json());
 

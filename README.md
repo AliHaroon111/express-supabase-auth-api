@@ -21,5 +21,5 @@ signing; this server verifies tokens and guards protected routes.
 - [x] Stage 2: Public & protected gates
 - [x] Stage 3: Token verification
 - [x] Stage 4: Middleware protection & logout
-- [ ] Stage 5: Swagger UI
+- [x] Stage 5: Swagger UI at http://localhost:3000/docs
 - [ ] Stage 6: Publish & document
