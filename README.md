@@ -17,7 +17,7 @@ signing; this server verifies tokens and guards protected routes.
 ## Status
 
 - [x] Stage 0: Project setup, Express server, Supabase client
-- [ ] Stage 1: Sign up & log in
+- [x] Stage 1: Sign up & log in
 - [ ] Stage 2: Public & protected gates
 - [ ] Stage 3: Token verification
 - [ ] Stage 4: Middleware protection & logout
